@@ -6,4 +6,5 @@ before_install:
   - docker build -t zipmatiz/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run zipmatiz/docker-react npm run test -- --coverage
+  - export CI=true
+  - docker run zipmatiz/docker-react CI=true npm run test -- --coverage
